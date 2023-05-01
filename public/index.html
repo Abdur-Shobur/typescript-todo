@@ -4,24 +4,39 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web site created using create-snowpack-app" />
-    <link rel="stylesheet" type="text/css" href="/index.css" />
+    <meta
+      name="description"
+      content="Web site created using create-snowpack-app"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <title>Snowpack App</title>
   </head>
   <body>
-    <img id="img" src="/logo.svg" />
-    <canvas id="canvas"></canvas>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script type="module" src="/dist/index.js"></script>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div class="wrapper">
+      <div class="task-input">
+        <ion-icon name="create-outline"></ion-icon>
+        <form id="formHandler" style="display: flex; gap: 5px">
+          <input
+            id="input-field"
+            style="width: fit-content"
+            type="text"
+            placeholder="Add a New Task + Enter"
+          />
+          <input type="submit" value="Submit" class="submit-btn" />
+          <!-- <button type="submit">Submit</button> -->
+        </form>
+      </div>
+      <div class="controls">
+        <div class="filters">
+          <span class="active" id="all">All</span>
+          <span id="pending">Pending</span>
+          <span id="completed">Completed</span>
+        </div>
+        <button class="clear-btn">Clear All</button>
+      </div>
+      <ul class="task-box" id="task-box"></ul>
+    </div>
   </body>
+
+  <script type="module" src="/dist/index.js"></script>
 </html>
